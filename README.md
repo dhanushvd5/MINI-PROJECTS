@@ -1,4 +1,4 @@
-Host a Login Page on EC2 and Save to RDS (2-Tier Architecture)
+**Host a Login Page on EC2 and Save to RDS (2-Tier Architecture)**
 🛠️ Tech Stack
 Frontend: HTML
 Backend: PHP
@@ -19,6 +19,7 @@ sudo apt update -y
 sudo apt install mysql-server -y
 Connect to RDS from EC2:
 mysql -h login-db.cj4x7kld6rdb.ap-south-1.rds.amazonaws.com -u admin -p
+
 Create Database & Table:
 CREATE DATABASE LoginDB;
 
@@ -29,6 +30,7 @@ CREATE TABLE users (
     username VARCHAR(50) NOT NULL,
     password VARCHAR(255) NOT NULL
 );
+
 Step 3: Setup EC2 Instance (Ubuntu)
 sudo apt update -y
 sudo apt install apache2 php libapache2-mod-php php-mysql -y
@@ -37,6 +39,7 @@ sudo systemctl enable apache2
 sudo rm /var/www/html/index.html
 📄 Step 4: Add HTML + PHP Code
 ✅ Save this as /var/www/html/index.php
+
 <?php
 session_start();
 
